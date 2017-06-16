@@ -1,10 +1,7 @@
-<html>
-  <script>
-    console.log('Is this even loading/working at all?')
+
     chrome.extension.onRequest.addListener(handleRequest);
 
     function handleRequest(index, sender, sendResponse) {
-      console.log('chrome received ' + index);
       sendResponse(); // Close connection.
 
       withBookmarksBar(function(bookmarks_bar) {
@@ -17,7 +14,6 @@
 
 
     function withBookmarksBar(callback) {
-        console.log('inside withBookmarksBar func');
       chrome.bookmarks.getTree(function(array) {
         // Finding by order is currently guaranteed:
         // http://groups.google.com/group/chromium-extensions/browse_thread/thread/312986b5f27046ad/ac9b855f984a3b3d
@@ -25,6 +21,3 @@
         callback(bookmarks_bar);
       });
     }
-
-  </script>
-</html>

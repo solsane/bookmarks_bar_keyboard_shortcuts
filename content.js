@@ -49,6 +49,5 @@ function keyCodeToNumber(keyCode) {
 
 function triggerByNumber(number) {
   var index = number==0 ? 10 : number;
-  console.log(number + 'pressed');
   chrome.extension.sendRequest(index);
 }
