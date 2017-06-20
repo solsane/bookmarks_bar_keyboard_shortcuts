@@ -7,7 +7,8 @@
       withBookmarksBar(function(bookmarks_bar) {
         var item = bookmarks_bar.children[index-1];
         if (item && item.url) {
-          chrome.tabs.update(sender.tab.id, {url: item.url});
+
+          chrome.tabs.update(undefined, {url: item.url});
         }
       });
     }

@@ -49,5 +49,12 @@ function keyCodeToNumber(keyCode) {
 
 function triggerByNumber(number) {
   var index = number==0 ? 10 : number;
+  /*if(document.getElementbyId('lga') != null) {
+    document.getElementbyId('lga').focus();
+  }*/
   chrome.extension.sendRequest(index);
+}
+
+if(document.getElementbyId('lga') != null) {
+  document.getElementbyId('lga').focus();
 }
